@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             x:Class="plmunAMS_user.Views.LoginPage"
+             BackgroundColor="#fff"
+             NavigationPage.HasNavigationBar="False">
+
+    <ScrollView>
+        <StackLayout Padding="10,0,10,0" VerticalOptions="Center">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                
+                <StackLayout>
+                    <Image Source="main_plmun.png" HeightRequest="200"></Image>
+                </StackLayout>
+
+                <StackLayout  Grid.Row="1">
+                    <Frame
+                       Padding="0" 
+                       CornerRadius="100"
+                       BackgroundColor="#F3F3F3"
+                       Margin="50,50,50,5"
+>
+                        <Entry 
+                           Margin="20,5,20,5"
+                           BackgroundColor="#F3F3F3"
+                           TextColor="Black"
+                           FontFamily="Nunito-Bold"
+                           Placeholder="Username"
+                           PlaceholderColor="#848484"
+                           x:Name="UserLogIn">
+                        </Entry>
+                    </Frame>
+                </StackLayout>
+
+                <StackLayout Grid.Row="2">
+                    <Frame
+                       Padding="0" 
+                       CornerRadius="100"
+                       Margin="50,5,50,0"
+                       BackgroundColor="#F3F3F3">
+
+                        <Entry Margin="20,5,20,5"
+                           BackgroundColor="#F3F3F3"
+                           TextColor="Black"
+                           FontFamily="Nunito-Bold"
+                           Placeholder="Password"
+                           PlaceholderColor="#848484"
+                           IsPassword="True"
+                           x:Name="PassLogIn">
+                        </Entry>
+                    </Frame>
+                </StackLayout>
+
+                <Button Grid.Row="3"
+                        VerticalOptions="Center" 
+                        HorizontalOptions="Center"
+                        Padding="40,10,40,10"
+                        CornerRadius="99"
+                        Text="Login" 
+                        Margin="0,80,0,0"
+                        Clicked="Login_Clicked">
+                                        
+                </Button>
+
+                <Label Grid.Row="4" 
+                       Text="Not registered? Sign Up" 
+                       TextColor="#747474"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Center"
+                       FontFamily="Nunito-Medium"
+                       Margin="0,10,0,10">
+
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                    </Label.GestureRecognizers>
+                </Label>
+                
+            </Grid>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

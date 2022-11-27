@@ -1,0 +1,238 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage  xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="plmunAMS_user.Views.DashboardPage"
+             xmlns:vm="clr-namespace:plmunAMS_user.ViewModels"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="#F8F8F8"
+             BarBackgroundColor="#fff"
+             UnselectedTabColor="#54595D"
+             SelectedTabColor="#A8DB80"
+             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+             android:TabbedPage.ToolbarPlacement="Bottom">
+    
+    <ContentPage Title="Home" IconImageSource="icon_home.png">
+       
+        <ContentPage.BindingContext>
+            <vm:DashboardViewModel />
+        </ContentPage.BindingContext>
+    
+        <ContentPage.Resources>
+            <ResourceDictionary>
+                <Color x:Key="Accent">#96d1ff</Color>
+            </ResourceDictionary>
+        </ContentPage.Resources>
+
+        <ScrollView>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <!--Logo Header-->
+                <StackLayout BackgroundColor="#f8f8f8" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                        <ContentView Padding="0,30,0,30" VerticalOptions="FillAndExpand">
+                            <Image Source="logo_plmun_dashboard.png" VerticalOptions="Center" HeightRequest="64" />
+                        </ContentView>
+                    </StackLayout>
+                </StackLayout>
+
+                <!--Content Titles-->
+                <StackLayout Grid.Row="1"
+                             Padding="45,30,0,0"
+                             >
+                    <Label Text="Hello Good Day!" 
+                           FontFamily="Nunito-Regular" 
+                           FontSize="15"
+                           TextColor="Black"/>
+
+                    <Label Text="First Name" 
+                           FontFamily="Nunito-Bold" 
+                           FontSize="45"
+                           TextColor="Black"/>
+
+                    <Label Text="Here are some things your can do," 
+                           FontFamily="Nunito-Regular" 
+                           FontSize="13"
+                           Margin="0,10,0,10"
+                           TextColor="Black"/>
+                </StackLayout>
+
+                <!--Containers-->
+                <StackLayout Grid.Row="2">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="200"/>
+                            <RowDefinition Height="100"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+
+                        <!--QR-->
+                        <BoxView BackgroundColor="#97CDFF"
+                                 CornerRadius="25"
+                                 Margin="20,0,2.5,0"
+                                 Grid.Column="0"/>
+                        <StackLayout>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="90"/>
+                                    <RowDefinition Height="20"/>
+                                    <RowDefinition Height="10"/>
+                                </Grid.RowDefinitions>
+
+                                <!--QR ICON-->
+                                <StackLayout Grid.Row="0">
+                                    <Image Source="qr.png" 
+                                            HorizontalOptions="Start" 
+                                            HeightRequest="40" 
+                                            Margin="45,30,0,0"/>
+                                </StackLayout>
+
+                                <!--QR TITLE-->
+                                <StackLayout Grid.Row="1">
+                                    <Label Text="View your QR" 
+                                            HorizontalOptions="Start" 
+                                            Margin="45,0,0,0"
+                                            FontFamily="Nunito-Bold"
+                                            TextColor="Black"/>
+                                </StackLayout>
+
+                                <!--QR TEXT-->
+                                <StackLayout Grid.Row="2">
+                                    <Label Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit." 
+                                        HorizontalOptions="Start" 
+                                        FontSize="10"
+                                        Margin="45,0,30,0"
+                                        TextColor="#3B5063"/>
+                                </StackLayout>
+                            </Grid>
+                        </StackLayout>
+
+                        <!--PROFILE-->
+                        <BoxView BackgroundColor="#FDFFAB"
+                                 CornerRadius="25"
+                                 Margin="2.5,0,20,0"
+                                 Grid.Column="1"/>
+                        <StackLayout Grid.Column="1">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="90"/>
+                                    <RowDefinition Height="20"/>
+                                    <RowDefinition Height="10"/>
+                                </Grid.RowDefinitions>
+
+                                <!--PROFILE ICON-->
+                                <StackLayout Grid.Row="0">
+                                    <Image Source="profile.png" 
+                                       HorizontalOptions="Start" 
+                                       HeightRequest="45" 
+                                       Margin="35,30,0,0"/>
+                                </StackLayout>
+
+                                <!--PROFILE TITLE-->
+                                <StackLayout Grid.Row="1">
+                                    <Label Text="Profile" 
+                                       HorizontalOptions="Start" 
+                                       Margin="30,0,0,0"
+                                       FontFamily="Nunito-Bold"
+                                       TextColor="Black"/>
+                                </StackLayout>
+
+                                <!--PROFILE TEXT-->
+                                <StackLayout Grid.Row="2">
+                                    <Label Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit." 
+                                           HorizontalOptions="Start" 
+                                           FontSize="10"
+                                           FontFamily="Nunito-Bold"
+                                           Margin="30,0,40,0"
+                                           TextColor="#3B5063"/>
+                                </StackLayout>
+                            </Grid>
+                        </StackLayout>
+
+                        <!--WEBSITE-->
+                        <BoxView BackgroundColor="#CDECAF"
+                                 CornerRadius="25"
+                                 Margin="20,3,20,0"
+                                 Grid.Row="1"
+                                 Grid.ColumnSpan="2"/>
+                        <StackLayout Grid.Row="1">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="90"/>
+                                    <RowDefinition Height="20"/>
+                                    <RowDefinition Height="10"/>
+                                </Grid.RowDefinitions>
+                                <StackLayout Grid.Row="0">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="100"/>
+                                            <ColumnDefinition Width="300"/>
+                                        </Grid.ColumnDefinitions>
+                                        <!--WEB ICON-->
+                                        <StackLayout Grid.Row="0" Grid.Column="0">
+                                            <Image Source="click.png" 
+                                               HorizontalOptions="Center" 
+                                               HeightRequest="40" 
+                                               Margin="45,30,0,0"/>
+                                        </StackLayout>
+
+                                        <!--WEB TITLE & WEB TEXT -->
+                                        <StackLayout Grid.Column="1"
+                                                     Margin="10,23,0,0">
+
+                                            <Label Text="Visit our website" 
+                                               HorizontalOptions="Start" 
+                                               FontFamily="Nunito-Bold"
+                                               TextColor="Black"
+                                       
+                                               Grid.Column="1"/>
+
+                                            <Label Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit." 
+                                                   HorizontalOptions="Start"
+                                                   FontFamily="Nunito-Regular"
+                                                   FontSize="10"
+                                                   Margin="0,0,30,0"
+                                                   TextColor="#3B5063"
+                                                   Grid.Column="1"/>
+                                        </StackLayout>
+                                    </Grid>
+                                </StackLayout>
+                            </Grid>
+                        </StackLayout>
+                    </Grid>
+                </StackLayout>
+
+                <!--SIGN OUT-->
+                <StackLayout Grid.Row="3"
+                             Orientation="Vertical" 
+                             Padding="0" 
+                             Spacing="10">
+
+                    <Button Margin="0,20,0,0" Text="Sign Out"
+                            Padding="30,0,30,0"
+                            FontFamily="Nunito-Regular" FontSize="13"
+                            HorizontalOptions="Center"
+                            BackgroundColor="#E55959"
+                            CornerRadius="99"
+                            TextColor="White"
+                            Clicked="SignOut_Clicked"/>
+                </StackLayout>
+            </Grid>
+        </ScrollView>
+    </ContentPage>
+
+    <ContentPage Title="Settings" IconImageSource="icon_settings.png">
+        <Label Text="Settings Page"
+               FontSize="50"
+               TextColor="Black"/>
+    </ContentPage>
+    
+</TabbedPage>
